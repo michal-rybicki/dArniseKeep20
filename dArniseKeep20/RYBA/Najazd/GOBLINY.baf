@@ -1,0 +1,116 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Shout(122)
+                setglobal("GoblinYUcieka","GLOBAL",1)
+		Enemy()
+END
+
+IF
+	HitBy([GOODCUTOFF],CRUSHING)
+THEN
+	RESPONSE #100
+		Shout(122)
+                setglobal("GoblinYUcieka","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Heard([ANYONE],122)
+	Allegiance(Myself,NEUTRAL)
+	!Class(Myself,INNOCENT)
+THEN
+	RESPONSE #100
+		Shout(199)
+		Enemy()
+		MoveToObject(LastHeardBy(Myself))
+                setglobal("GoblinYUcieka","GLOBAL",1)
+END
+
+IF
+	Heard([ANYONE],122)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+                setglobal("GoblinYUcieka","GLOBAL",1)
+END
+
+IF
+	Heard([ANYONE],199)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Enemy()
+                setglobal("GoblinYUcieka","GLOBAL",1)
+END
+
+IF
+	Heard([ANYONE],122)
+	!Class(Myself,INNOCENT)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToObject(LastHeardBy(Myself))
+                setglobal("GoblinYUcieka","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Heard([ANYONE],199)
+	!Class(Myself,INNOCENT)
+	!See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToObject(LastHeardBy(Myself))
+                setglobal("GoblinYUcieka","GLOBAL",1)
+		Continue()
+
+END
+
+IF
+        Global("GoblinYUcieka","GLOBAL",1)
+
+THEN
+        RESPONSE #100
+                movetopoint([100.3400])
+                escapearea()
+END
+
+IF
+        Global("GoblinSojusz","GLOBAL",1)
+
+THEN
+        RESPONSE #100
+                movetopoint([1200.2900])
+                escapearea()
+END
+
+IF   
+     global("GoblinGadanie","GLOBAL",0)
+     OR(2)
+     global("KatapultyNON","GLOBAL",1)
+     global("KatapultySON","GLOBAL",1)
+THEN
+     RESPONSE #2
+           DisplayStringHead(Myself,~Brawo!~)
+           Wait(32)
+     RESPONSE #2
+           DisplayStringHead(Myself,~Piêkny strza³!~)
+           Wait(29)
+     RESPONSE #2
+           DisplayStringHead(Myself,~Oj! Dzikim siê oberwie!~)
+           Wait(24)
+     RESPONSE #2
+           DisplayStringHead(Myself,~Mam wra¿enie, ¿e to miejsce ma dziwn¹ akustykê. Jakby nasze g³osy nios³y siê po ca³ym przedpolu zamku.~)
+           Wait(35)
+     RESPONSE #2
+           DisplayStringHead(Myself,~Leci!.~)
+           Wait(30)
+     RESPONSE #90
+           Wait(30)
+
+
+END

@@ -1,0 +1,6 @@
+IF
+        global("JeniecExist","GLOBAL",0)
+THEN
+        RESPONSE #100
+        setglobal("JeniecExist","GLOBAL",1)
+END

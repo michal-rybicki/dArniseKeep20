@@ -1,0 +1,12 @@
+IF
+    !areacheck("ar1304")
+    !areacheck("ar1305")
+    !areacheck("ar1306")
+    !areacheck("ar1307")
+THEN
+    RESPONSE #100
+      LeaveParty()
+      SetGlobal("GarlanJoined","GLOBAL",0)
+      DisplayStringHead(Myself,~Ho! Ho! Ale, mnie wyci¹gnêliscie! Muszê ju¿ wracaæ do zamku.~)
+      EscapeAreaMove("ar1307",1460,1600,0)
+END

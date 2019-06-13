@@ -1,0 +1,14 @@
+IF
+        global("MarkerStworzeniaP","GLOBAL",0)
+THEN
+        RESPONSE #100
+        setglobal("MarkerStworzeniaP","GLOBAL",1)
+END
+
+IF
+        global("DinaraPlac","GLOBAL",0)
+THEN
+	RESPONSE #100
+                setglobal("MarkerStworzeniaP","GLOBAL",0)
+		EscapeArea()
+END

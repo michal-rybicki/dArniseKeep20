@@ -1,0 +1,26 @@
+IF ~~ THEN BEGIN MAGAZYN9
+SAY ~Jak ma brzemieæ etykieta?~
+IF ~!global("MAGAZYN9",GLOBAL,0)~ THEN REPLY ~Magazyn 10.~ DO ~setglobal("MAGAZYN9",GLOBAL,0)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,1)~ THEN REPLY ~Zbroje.~ DO ~setglobal("MAGAZYN9",GLOBAL,1)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,2)~ THEN REPLY ~Szaty maga.~ DO ~setglobal("MAGAZYN9",GLOBAL,2)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,3)~ THEN REPLY ~He³my.~ DO ~setglobal("MAGAZYN9",GLOBAL,3)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,4)~ THEN REPLY ~Zbroje i he³my.~ DO ~setglobal("MAGAZYN9",GLOBAL,4)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,5)~ THEN REPLY ~Tarcze.~ DO ~setglobal("MAGAZYN9",GLOBAL,5)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,6)~ THEN REPLY ~Zbroje, he³my i tarcze.~ DO ~setglobal("MAGAZYN9",GLOBAL,6)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,7)~ THEN REPLY ~Pasy, p³aszcze, buty i bransolety.~ DO ~setglobal("MAGAZYN9",GLOBAL,7)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,8)~ THEN REPLY ~Broñ strzelecka.~ DO ~setglobal("MAGAZYN9",GLOBAL,8)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,9)~ THEN REPLY ~Bron do walki wrêcz.~ DO ~setglobal("MAGAZYN9",GLOBAL,9)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,10)~ THEN REPLY ~Bronie niemagiczne.~ DO ~setglobal("MAGAZYN9",GLOBAL,10)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,11)~ THEN REPLY ~Magiczne zwoje.~ DO ~setglobal("MAGAZYN9",GLOBAL,11)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,12)~ THEN REPLY ~Mikstury.~ DO ~setglobal("MAGAZYN9",GLOBAL,12)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,13)~ THEN REPLY ~Bi¿uteria magiczna.~ DO ~setglobal("MAGAZYN9",GLOBAL,13)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,14)~ THEN REPLY ~Bi¿uteria zwyk³a.~ DO ~setglobal("MAGAZYN9",GLOBAL,14)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,15)~ THEN REPLY ~Drogie kamienie.~DO ~setglobal("MAGAZYN9",GLOBAL,15)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,16)~ THEN REPLY ~Pami¹tki.~ DO ~setglobal("MAGAZYN9",GLOBAL,16)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,17)~ THEN REPLY ~Fragmenty broni.~ DO ~setglobal("MAGAZYN9",GLOBAL,17)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,18)~ THEN REPLY ~Ksi¹¿ki.~ DO ~setglobal("MAGAZYN9",GLOBAL,18)~ GOTO Etykiety
+IF ~!global("MAGAZYN9",GLOBAL,19)~ THEN REPLY ~Ró¿ne.~ DO ~setglobal("MAGAZYN9",GLOBAL,19)~ GOTO Etykiety
+IF ~~ THEN REPLY ~Chcê zmieniæ inn¹ etykietê.~ GOTO Etykiety
+IF ~~ THEN REPLY ~Potrzebujê jednak czegoœ innego.~ GOTO Gada1
+IF ~~ THEN REPLY ~Tak jest dobrze. ¯egnaj.~ EXIT
+END

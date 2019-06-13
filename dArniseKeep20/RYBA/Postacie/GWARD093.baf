@@ -1,0 +1,7 @@
+
+IF
+        global("DinaraKatapultN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END

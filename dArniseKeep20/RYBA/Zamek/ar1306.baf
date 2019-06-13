@@ -1,0 +1,69 @@
+IF
+       Global("RatavaExist","GLOBAL",0)
+THEN
+       RESPONSE #100
+		CreateCreature("SEJDAR",[499.596],0) // Sejdar
+                SetGlobal("RatavaExist","GLOBAL",1)
+END
+
+IF
+	Global("MagazynierAr1306","GLOBAL",0)
+        global("GoblinSojusz","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CreateCreature("GOBLINM",[320.1050],12)
+		CreateCreature("GOBLINM",[1480.380],0)
+		CreateCreature("GOBLINM",[900.1310],0)
+	 	SetGlobal("MagazynierAr1306","GLOBAL",1)
+
+END
+
+IF
+	Global("cmgavatar","MYAREA",0)
+THEN
+	RESPONSE #100
+		CreateCreature("GWARD01",[819.769],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD01",[928.704],14) // Gwardzista rodu d'Arnise
+		CreateCreature("DINARA",[1532.1103],0) // Porucznik Dinara
+		SetGlobal("cmgavatar","MYAREA",1)
+END
+
+IF
+	GlobalTimerExpired("DarniseTajemne2","GLOBAL")
+        global("DinaraTajemne","GLOBAL",1)
+THEN
+        RESPONSE #100
+        Closedoor("SECRET01")
+        Closedoor("SECRET02")
+        Closedoor("Secret03")
+        Closedoor("Secret04")
+        Closedoor("Secret05")
+        Closedoor("Secret06")
+        Closedoor("Secret07")
+        SetGlobalTimer("DarniseTajemne2","GLOBAL",ONE_DAY)
+END
+
+IF
+        global("GoblinSojusz","GLOBAL",1)
+        global("GoblinIAr1306","GLOBAL",1)
+THEN
+        RESPONSE #100
+                setglobal("GoblinIAr1306","GLOBAL",0)
+                SetGlobal("GoblinIUcieka","GLOBAL",0)
+		CreateCreature("GOBLINI",[2490.1090],0)
+		CreateCreature("GOBLINI",[2440.1040],0)
+		CreateCreature("GOBLINI",[2340.1160],8)
+		CreateCreature("GOBLINI",[2270.1111],8)
+END
+
+IF 
+      global("NaradadArnise","GLOBAL",1)
+THEN
+      RESPONSE #100
+      ActionOverride(Player1,LeaveAreaLUA("AR1307","",[1165.1075],14))
+      ActionOverride(Player2,LeaveAreaLUA("AR1307","",[1363.981],4))
+      ActionOverride(Player3,LeaveAreaLUA("AR1307","",[1453.981],4))
+      ActionOverride(Player4,LeaveAreaLUA("AR1307","",[1415.950],2))
+      ActionOverride(Player5,LeaveAreaLUA("AR1307","",[1565.1060],0))
+      ActionOverride(Player6,LeaveAreaLUA("AR1307","",[1580.1090],0))
+END

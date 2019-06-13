@@ -1,0 +1,6 @@
+IF
+     areacheck("Ar1304")
+THEN
+RESPONSE #100
+destroyself()
+END

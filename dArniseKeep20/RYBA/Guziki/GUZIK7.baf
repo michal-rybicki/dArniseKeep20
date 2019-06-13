@@ -1,0 +1,41 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,5)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Jesteœ zbyt daleko ¿eby tego u¿yæ.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        !global("KomnataAktywna","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Program szkoleniowy: Wycieczka do piek³a.~)
+                wait(2)
+		DisplayString(Myself,~6~)
+                wait(1)
+		DisplayString(Myself,~5~)
+                wait(1)
+		DisplayString(Myself,~4~)
+                wait(1)
+		DisplayString(Myself,~3~)
+                wait(1)
+		DisplayString(Myself,~2~)
+                wait(1)
+		DisplayString(Myself,~1~)
+                wait(1)
+                setglobal("KomnataAktywna","GLOBAL",2)
+                setglobal("EmilWzdycha","GLOBAL",1)
+		CreateCreatureDoor("EMIL",[2480.515],0)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        global("KomnataAktywna","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Wciskasz p³ytê, ale nic siê nie dzieje.~)
+END

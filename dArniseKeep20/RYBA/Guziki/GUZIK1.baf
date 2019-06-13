@@ -1,0 +1,49 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,5)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Jesteœ zbyt daleko ¿eby tego u¿yæ.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        global("KomnataAktywna","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Znajdujesz napis informuj¹cy, ¿e to p³yta deaktywuj¹ca komnatê.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        !global("KomnataAktywna","GLOBAL",0)
+        global("KomnataOddzial","GLOBAL",1)
+THEN
+	RESPONSE #80
+		DisplayString(Myself,~Komnata deaktywuje siê.~)
+                wait(1)
+                setglobal("KomnataAktywna","GLOBAL",0)
+                unlock("Door03")
+                opendoor("Door03")
+        RESPONSE #20
+                DisplayString(Myself,~Zgrzyt. Zgrzyt. Stuk. Stuk. Coœ siê zacie³o.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        !global("KomnataAktywna","GLOBAL",0)
+        global("KomnataOddzial","GLOBAL",0)
+THEN
+	RESPONSE #80
+		DisplayString(Myself,~Komnata deaktywuje siê.~)
+                wait(1)
+                incrementglobal("DarniseRezerwy","GLOBAL",1)
+                setglobal("KomnataAktywna","GLOBAL",0)
+                unlock("Door03")
+                opendoor("Door03")
+        RESPONSE #20
+                DisplayString(Myself,~Zgrzyt. Zgrzyt. Stuk. Stuk. Coœ siê zacie³o.~)
+END

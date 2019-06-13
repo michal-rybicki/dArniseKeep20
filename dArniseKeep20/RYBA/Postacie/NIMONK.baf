@@ -1,0 +1,21 @@
+IF 
+     global("ArkandTrening","GLOBAL",2)
+THEN
+     RESPONSE #100
+         enemy()
+END
+
+IF
+     global("ArkandTrening","GLOBAL",3)
+THEN
+     RESPONSE #100
+         DestroySelf()
+END
+
+IF
+     global("DarniseRezerwy","GLOBAL",0)
+THEN
+     RESPONSE #100
+         setglobal("ArkandTrening","GLOBAL",5)
+         DestroySelf()
+END 

@@ -1,0 +1,68 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,5)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Jesteœ zbyt daleko ¿eby tego u¿yæ.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        !global("KomnataAktywna","GLOBAL",2)
+        !global("DinzlaRuszona","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Program szkoleniowy: Wielka zdrada.~)
+                wait(2)
+		DisplayString(Myself,~4~)
+                wait(1)
+		DisplayString(Myself,~3~)
+                wait(1)
+		DisplayString(Myself,~2~)
+                wait(1)
+		DisplayString(Myself,~1~)
+                wait(1)
+                setglobal("KomnataAktywna","GLOBAL",2)
+                CreateCreatureDoor("GWARD04",[2334.490],0)
+		CreateCreatureDoor("GWARD04",[2375.515],0)
+                CreateCreatureDoor("GWARD04",[2411.541],0)
+		CreateCreatureDoor("GWARD04",[2447.571],0)
+                CreateCreatureDoor("DINZLA",[2388.458],0)
+                setglobal("DinzlaRuszona","GLOBAL",1)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        global("KomnataAktywna","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Wciskasz p³ytê, ale nic siê nie dzieje.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        !global("KomnataAktywna","GLOBAL",2)
+        global("DinzlaRuszona","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Program szkoleniowy: Wielka zdrada.~)
+                wait(2)
+		DisplayString(Myself,~4~)
+                wait(1)
+		DisplayString(Myself,~3~)
+                wait(1)
+		DisplayString(Myself,~2~)
+                wait(1)
+		DisplayString(Myself,~1~)
+                wait(1)
+                setglobal("KomnataAktywna","GLOBAL",2)
+                CreateCreatureDoor("GWARD04",[2334.490],0)
+		CreateCreatureDoor("GWARD04",[2375.515],0)
+                CreateCreatureDoor("GWARD04",[2411.541],0)
+		CreateCreatureDoor("GWARD04",[2447.571],0)
+                CreateCreatureDoor("DINZLA1",[2388.458],0)
+                setglobal("DinzlaRuszona","GLOBAL",1)
+END

@@ -1,0 +1,439 @@
+BACKUP ~dArniseKeep20/backup~
+AUTHOR ~RYBA~
+
+BEGIN ~Ulepszona warownia d'Arnise~
+
+//Komnata Treningowa
+
+COMPILE ~dArniseKeep20/RYBA/guziki/GUZIK1.baf~
+COMPILE ~dArniseKeep20/RYBA/guziki/GUZIK2.baf~
+COMPILE ~dArniseKeep20/RYBA/guziki/GUZIK3.baf~
+COMPILE ~dArniseKeep20/RYBA/guziki/GUZIK4.baf~
+COMPILE ~dArniseKeep20/RYBA/guziki/GUZIK5.baf~
+COMPILE ~dArniseKeep20/RYBA/guziki/GUZIK6.baf~
+COMPILE ~dArniseKeep20/RYBA/guziki/GUZIK7.baf~
+COMPILE ~dArniseKeep20/RYBA/guziki/GUZIK8.baf~
+COPY ~dArniseKeep20/RYBA/guziki/GOBLIN1.cre~  ~override/GOBLIN1.cre~
+SAY NAME1 ~Dziki Goblin~
+SAY NAME2 ~Dziki Goblin~
+COPY ~dArniseKeep20/RYBA/guziki/EMIL.cre~  ~override/EMIL.cre~
+SAY NAME1 ~Emil~
+SAY NAME2 ~Emil~
+COMPILE ~dArniseKeep20/RYBA/guziki/EMIL.baf~
+COMPILE ~dArniseKeep20/RYBA/guziki/EMIL.d~
+USING ~~
+COPY ~dArniseKeep20/RYBA/guziki/PLANETAR.cre~  ~override/PLANETAR.cre~
+SAY NAME1 ~Upad≥y Planetar~
+SAY NAME2 ~Upad≥y Planetar~
+COPY ~dArniseKeep20/RYBA/guziki/OBSERVER.cre~  ~override/OBSERVER.cre~
+SAY NAME1 ~Obserwator~
+SAY NAME2 ~Obserwator~
+COMPILE ~dArniseKeep20/RYBA/guziki/OBSERVER.d~
+USING ~~
+COMPILE ~dArniseKeep20/RYBA/guziki/OBSERVER.baf~
+COPY ~dArniseKeep20/RYBA/guziki/GWARD03.cre~  ~override/GWARD03.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/guziki/GWARD031.cre~  ~override/GWARD031.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/guziki/GWARD032.cre~  ~override/GWARD032.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/guziki/GWARD033.cre~  ~override/GWARD033.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/guziki/GWARD034.cre~  ~override/GWARD034.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/guziki/GWARD04.cre~  ~override/GWARD04.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/guziki/DINZLA.cre~  ~override/DINZLA.cre~
+SAY NAME1 ~Porucznik Dinara~
+SAY NAME2 ~Porucznik Dinara~
+COPY ~dArniseKeep20/RYBA/guziki/DINZLA1.cre~  ~override/DINZLA1.cre~
+SAY NAME1 ~Porucznik Dinara~
+SAY NAME2 ~Porucznik Dinara~
+COMPILE ~dArniseKeep20/RYBA/guziki/GWARD03.baf~
+COMPILE ~dArniseKeep20/RYBA/guziki/CWICZE.baf~
+
+
+//GARLAN
+
+COPY ~dArniseKeep20/RYBA/Garlan/GarlanL.bmp~ ~override/GarlanL.bmp~
+COPY ~dArniseKeep20/RYBA/Garlan/Garlans.bmp~ ~override/Garlans.bmp~
+COPY ~dArniseKeep20/RYBA/Garlan/GARLAN.cre~  ~override/GARLAN.cre~
+SAY NAME1 ~Garlan~
+SAY NAME2 ~Garlan~
+COMPILE ~dArniseKeep20/RYBA/Garlan/GARLAN.baf~
+COMPILE ~dArniseKeep20/RYBA/Garlan/Garlan.d~
+USING ~~
+APPEND ~pdialog.2da~
+~GARLAN GARLANP GARLANJ GARLAND GARLAN25P GARLAN25J GARLAN25D GARLAN25~
+UNLESS ~GARLAN~
+APPEND ~interdia.2da~
+~GARLAN GARLANB GARLAN25B~ 
+
+
+//ZAMEK
+
+EXTEND_TOP ~ar1304.bcs~ ~dArniseKeep20/RYBA/zamek/ar1304.baf~
+EXTEND_BOTTOM ~ar1306.bcs~ ~dArniseKeep20/RYBA/zamek/ar1306.baf~
+EXTEND_TOP ~ar1307.bcs~ ~dArniseKeep20/RYBA/zamek/ar1307.baf~
+EXTEND_TOP ~ar1305.bcs~ ~dArniseKeep20/RYBA/zamek/ar1305.baf~
+EXTEND_TOP ~baldur.bcs~ ~dArniseKeep20/RYBA/zamek/baldur.baf~
+COPY ~dArniseKeep20/RYBA/zamek/ar1306.are~  ~override/ar1306.are~
+COPY ~dArniseKeep20/RYBA/zamek/ar1307.are~  ~override/ar1307.are~
+COPY ~dArniseKeep20/RYBA/zamek/ar1305.are~  ~override/ar1305.are~
+COPY ~dArniseKeep20/RYBA/zamek/ar1304.are~  ~override/ar1304.are~
+
+
+//Postacie
+
+COPY ~dArniseKeep20/RYBA/Postacie/ARKAND.cre~  ~override/ARKAND.cre~
+SAY NAME1 ~Porucznik Arkand~
+SAY NAME2 ~Porucznik Arkand~
+COMPILE ~dArniseKeep20/RYBA/Postacie/ARKAND.d~
+USING ~~
+COMPILE ~dArniseKeep20/RYBA/Postacie/ARKAND.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/SEJDAR.cre~  ~override/SEJDAR.cre~
+SAY NAME1 ~Sejdar~
+SAY NAME2 ~Sejdar~
+COMPILE ~dArniseKeep20/RYBA/Postacie/SEJDAR.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Postacie/NIMONK.cre~  ~override/NIMONK.cre~
+SAY NAME1 ~Kuk≥a Yuan-ti~
+SAY NAME2 ~Kuk≥a Yuan-ti~
+COMPILE ~dArniseKeep20/RYBA/Postacie/NIMONK.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/KROLIK.cre~  ~override/KROLIK.cre~
+COMPILE ~dArniseKeep20/RYBA/Postacie/KROLIK.d~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD01.cre~  ~override/GWARD01.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD01.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/KATAPULT.SPL~  ~override/KATAPULT.SPL~
+SAY NAME1 ~Strza≥ z katapulty~
+SAY NAME2 ~Strza≥ z katapulty~
+
+COPY ~dArniseKeep20/RYBA/Postacie/MASAZ.SPL~  ~override/MASAZ.SPL~
+SAY NAME1 ~Masaø~
+SAY NAME2 ~Masaø~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD02.cre~  ~override/GWARD02.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD021.cre~  ~override/GWARD021.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD022.cre~  ~override/GWARD022.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD023.cre~  ~override/GWARD023.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD024.cre~  ~override/GWARD024.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD02.baf~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD02.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD081.cre~  ~override/GWARD081.cre~
+SAY NAME1 ~Obs≥uga katapulty~
+SAY NAME2 ~Obs≥uga katapulty~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD08.d~
+USING ~~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD081.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD082.cre~  ~override/GWARD082.cre~
+SAY NAME1 ~Obs≥uga katapulty~
+SAY NAME2 ~Obs≥uga katapulty~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD082.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD083.cre~  ~override/GWARD083.cre~
+SAY NAME1 ~Obs≥uga katapulty~
+SAY NAME2 ~Obs≥uga katapulty~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD083.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD091.cre~  ~override/GWARD091.cre~
+SAY NAME1 ~Obs≥uga katapulty~
+SAY NAME2 ~Obs≥uga katapulty~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD09.d~
+USING ~~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD091.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD092.cre~  ~override/GWARD092.cre~
+SAY NAME1 ~Obs≥uga katapulty~
+SAY NAME2 ~Obs≥uga katapulty~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD092.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD093.cre~  ~override/GWARD093.cre~
+SAY NAME1 ~Obs≥uga katapulty~
+SAY NAME2 ~Obs≥uga katapulty~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD093.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD06.cre~  ~override/GWARD06.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD06.baf~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD06.d~
+USING ~~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD061.cre~  ~override/GWARD061.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD062.cre~  ~override/GWARD062.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD063.cre~  ~override/GWARD063.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD064.cre~  ~override/GWARD064.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD07.cre~  ~override/GWARD07.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD07.baf~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD07.d~
+USING ~~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD071.cre~  ~override/GWARD071.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD072.cre~  ~override/GWARD072.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD073.cre~  ~override/GWARD073.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD074.cre~  ~override/GWARD074.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+
+COPY ~dArniseKeep20/RYBA/Postacie/GWARD05.cre~  ~override/GWARD05.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COMPILE ~dArniseKeep20/RYBA/Postacie/GWARD05.baf~
+
+COPY ~dArniseKeep20/RYBA/Postacie/NIMON.cre~  ~override/NIMON.cre~
+SAY NAME1 ~Nimon~
+SAY NAME2 ~Nimon~
+COMPILE ~dArniseKeep20/RYBA/Postacie/NIMON.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Postacie/DINARA.cre~  ~override/DINARA.cre~
+SAY NAME1 ~Porucznik Dinara~
+SAY NAME2 ~Porucznik Dinara~
+COMPILE ~dArniseKeep20/RYBA/Postacie/DINARA.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Postacie/CALIA.cre~  ~override/CALIA.cre~
+SAY NAME1 ~S≥uøka Calia~
+SAY NAME2 ~S≥uøka Calia~
+COMPILE ~dArniseKeep20/RYBA/Postacie/CALIA.d~
+USING ~~
+COMPILE ~dArniseKeep20/RYBA/Postacie/CALIA.baf~
+
+COMPILE ~dArniseKeep20/RYBA/Postacie/KPCAPT02.d~
+USING ~~
+
+
+COMPILE ~dArniseKeep20/RYBA/Postacie/KPDOMO01.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Postacie/JENIEC.cre~  ~override/JENIEC.cre~
+SAY NAME1 ~Jeniec~
+SAY NAME2 ~Jeniec~
+COMPILE ~dArniseKeep20/RYBA/Postacie/JENIEC.baf~
+COMPILE ~dArniseKeep20/RYBA/Postacie/JENIEC.d~
+USING ~~
+
+EXTEND_TOP ~KPFIGHT.bcs~ ~dArniseKeep20/RYBA/Postacie/KPFIGHT.baf~
+
+COMPILE ~dArniseKeep20/RYBA/Postacie/KPSOLD04.d~
+USING ~~
+
+//Lokacje
+
+EXTEND_TOP ~ar0300.bcs~ ~dArniseKeep20/RYBA/Lokacje/ar0300.baf~
+EXTEND_TOP ~ar0400.bcs~ ~dArniseKeep20/RYBA/Lokacje/ar0400.baf~
+EXTEND_TOP ~ar1100.bcs~ ~dArniseKeep20/RYBA/Lokacje/ar1100.baf~
+EXTEND_TOP ~ar1200.bcs~ ~dArniseKeep20/RYBA/Lokacje/ar1200.baf~
+EXTEND_TOP ~ar1700.bcs~ ~dArniseKeep20/RYBA/Lokacje/ar1700.baf~
+EXTEND_TOP ~ar3000.bcs~ ~dArniseKeep20/RYBA/Lokacje/ar3000.baf~
+EXTEND_TOP ~ar1900.bcs~ ~dArniseKeep20/RYBA/Lokacje/ar1900.baf~
+EXTEND_TOP ~ar2000.bcs~ ~dArniseKeep20/RYBA/Lokacje/ar2000.baf~
+
+
+//Najazd
+
+COPY ~dArniseKeep20/RYBA/Najazd/GOBLINX.cre~  ~override/GOBLINX.cre~
+SAY NAME1 ~Dziki Goblin~
+SAY NAME2 ~Dziki Goblin~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINX.baf~
+
+COPY ~dArniseKeep20/RYBA/Najazd/GOBLINY.cre~  ~override/GOBLINY.cre~
+SAY NAME1 ~Przyjazny Goblin~
+SAY NAME2 ~Przyjazny Goblin~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINY.baf~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINY.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Najazd/GOBLINT.cre~  ~override/GOBLINT.cre~
+SAY NAME1 ~Goblin Tragarz~
+SAY NAME2 ~Goblin Tragarz~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINT.baf~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINT.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Najazd/GOBLINM.cre~  ~override/GOBLINM.cre~
+SAY NAME1 ~Goblin Magazynier~
+SAY NAME2 ~Goblin Magazynier~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINM.baf~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINM.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Najazd/GOBLINM1.cre~  ~override/GOBLINM1.cre~
+SAY NAME1 ~Goblin Magazynier~
+SAY NAME2 ~Goblin Magazynier~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINM1.baf~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GWARD0M.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Najazd/GWARD0M.cre~  ~override/GWARD0M.cre~
+SAY NAME1 ~Gwardzista rodu d'Arnise~
+SAY NAME2 ~Gwardzista rodu d'Arnise~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GWARD0M.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Najazd/GOBLINS.cre~  ~override/GOBLINS.cre~
+SAY NAME1 ~Starszy Inøynier~
+SAY NAME2 ~Starszy Inøynier~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINS.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Najazd/GOBLINI.cre~  ~override/GOBLINI.cre~
+SAY NAME1 ~Goblin Inøynier~
+SAY NAME2 ~Goblin Inøynier~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINI.baf~
+COMPILE ~dArniseKeep20/RYBA/Najazd/DIAMENT.baf~
+COMPILE ~dArniseKeep20/RYBA/Najazd/GOBLINI.d~
+USING ~~
+
+//Kupcy
+
+COMPILE ~dArniseKeep20/RYBA/Kupcy/KUPCY.baf~
+
+COPY ~dArniseKeep20/RYBA/Kupcy/GERALD.cre~  ~override/GERALD.cre~
+SAY NAME1 ~Kupiec Gerald~
+SAY NAME2 ~Kupiec Gerald~
+COMPILE ~dArniseKeep20/RYBA/Kupcy/GERALD.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Kupcy/GALIA.cre~  ~override/GALIA.cre~
+SAY NAME1 ~Kupiec Galia~
+SAY NAME2 ~Kupiec Galia~
+COMPILE ~dArniseKeep20/RYBA/Kupcy/GALIA.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Kupcy/GANT.cre~  ~override/GANT.cre~
+SAY NAME1 ~Kupiec Gant~
+SAY NAME2 ~Kupiec Gant~
+COMPILE ~dArniseKeep20/RYBA/Kupcy/GANT.d~
+USING ~~
+
+COPY ~dArniseKeep20/RYBA/Kupcy/GINAZ.cre~  ~override/GANT.cre~
+SAY NAME1 ~Kupiec Ginaz~
+SAY NAME2 ~Kupiec Ginaz~
+COMPILE ~dArniseKeep20/RYBA/Kupcy/GINAZ.d~
+USING ~~
+
+//SKLEPY I MAGAZYNY
+
+COPY ~dArniseKeep20/RYBA/sklepy/Kuznia01.sto~     ~override/Kuznia01.sto~
+  SAY 0xc ~Kuünia rodu d'Arnise~
+
+COPY ~dArniseKeep20/RYBA/sklepy/Kuznia02.sto~     ~override/Kuznia02.sto~
+  SAY 0xc ~Zwoje Garlana~
+
+COPY ~dArniseKeep20/RYBA/sklepy/Kuznia03.sto~     ~override/Kuznia03.sto~
+  SAY 0xc ~Kuünia rodu d'Arnise~
+
+COPY ~dArniseKeep20/RYBA/sklepy/Kuznia04.sto~     ~override/Kuznia04.sto~
+  SAY 0xc ~Kuünia rodu d'Arnise~
+
+COPY ~dArniseKeep20/RYBA/sklepy/GANT.sto~         ~override/GANT.sto~
+  SAY 0xc ~Amunicja Ganta~
+
+COPY ~dArniseKeep20/RYBA/sklepy/GERALD.sto~       ~override/GERALD.sto~
+  SAY 0xc ~Szaty Geralda~
+
+COPY ~dArniseKeep20/RYBA/sklepy/Ginaz.sto~       ~override/GINAZ.sto~
+  SAY 0xc ~Sklep Ginaza~
+
+COPY ~dArniseKeep20/RYBA/sklepy/GOBLIN.sto~       ~override/GOBLIN.sto~
+  SAY 0xc ~Brygada Transportowa~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~      ~override/MAGAZYN.sto~
+  SAY 0xc ~Osobisty magazyn~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~      ~override/MAGAZYN1.sto~
+  SAY 0xc ~Magazyn 1~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~      ~override/MAGAZYN2.sto~
+  SAY 0xc ~Magazyn 2~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~     ~override/MAGAZYN3.sto~
+  SAY 0xc ~Magazyn 3~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~     ~override/MAGAZYN4.sto~
+  SAY 0xc ~Magazyn 4~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~     ~override/MAGAZYN5.sto~
+  SAY 0xc ~Magazyn 5~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~     ~override/MAGAZYN6.sto~
+  SAY 0xc ~Magazyn 6~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~     ~override/MAGAZYN7.sto~
+  SAY 0xc ~Magazyn 7~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~     ~override/MAGAZYN8.sto~
+  SAY 0xc ~Magazyn 8~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~     ~override/MAGAZYN9.sto~
+  SAY 0xc ~Magazyn 9~
+
+COPY ~dArniseKeep20/RYBA/sklepy/MAGAZYN.sto~     ~override/MAGAZYN0.sto~
+  SAY 0xc ~Magazyn 10~
+
+COPY ~dArniseKeep20/RYBA/sklepy/AMMO1.sto~       ~override/AMMO1.sto~
+  SAY 0xc ~Strza≥y~
+
+COPY ~dArniseKeep20/RYBA/sklepy/AMMO2.sto~       ~override/AMMO2.sto~
+  SAY 0xc ~Be≥ty~
+
+COPY ~dArniseKeep20/RYBA/sklepy/AMMO3.sto~       ~override/AMMO3.sto~
+  SAY 0xc ~Pociski do procy~
+
+COPY ~dArniseKeep20/RYBA/sklepy/AMMO4.sto~       ~override/AMMO4.sto~
+  SAY 0xc ~Strza≥ki~
+
+COPY ~dArniseKeep20/RYBA/sklepy/AMMO5.sto~       ~override/AMMO5.sto~
+  SAY 0xc ~Amunicja~
+
+COPY ~dArniseKeep20/RYBA/sklepy/GALIA.sto~       ~override/GALIA.sto~
+  SAY 0xc ~Kamienie Galii~
+
+COPY ~dArniseKeep20/RYBA/sklepy/kpchap01.sto~    ~override/kpchap01.sto~
+
+BEGIN ~Warownia d'Arnise dla wszystkich klas~
+
+COMPILE ~dArniseKeep20/RYBA/NALIAJ.d~
+USING ~~

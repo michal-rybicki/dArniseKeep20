@@ -1,0 +1,8 @@
+IF
+     global("CaliaMasaz","GLOBAL",1)
+THEN
+RESPONSE #100
+     ReallyforcespellRES("MASAZ",LastTalkedToBy(Myself))
+     setglobal("CaliaMasaz","GLOBAL",0)
+END
+     

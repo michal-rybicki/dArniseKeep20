@@ -1,0 +1,7 @@
+IF
+        global("KomnataAktywna","GLOBAL",0)
+THEN
+	RESPONSE #100
+                setglobal("KomnataOddzial","GLOBAL",1)
+		EscapeArea()
+END

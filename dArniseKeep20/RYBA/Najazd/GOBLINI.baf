@@ -1,0 +1,68 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+                setglobal("GoblinUcieka","GLOBAL",1)
+		Enemy()
+		Continue()
+END
+
+IF
+	HitBy([GOODCUTOFF],CRUSHING)
+THEN
+	RESPONSE #100
+                setglobal("GoblinUcieka","GLOBAL",1)
+		Continue()
+END
+
+IF
+        Global("GoblinUcieka","GLOBAL",1)
+
+THEN
+        RESPONSE #100
+                escapearea()
+END
+
+IF
+        Global("GoblinIUcieka","GLOBAL",1)
+
+THEN
+        RESPONSE #100
+                escapearea()
+END
+
+IF
+        !Global("GoblinIPraca","GLOBAL",0)
+        areacheck("AR1306")
+THEN
+        RESPONSE #100
+                escapearea()
+END
+
+IF
+        !Global("GoblinIPraca","GLOBAL",1)
+        areacheck("AR1305")
+THEN
+        RESPONSE #100
+                escapearea()
+END
+
+IF
+        !Global("GoblinIPraca","GLOBAL",2)
+        areacheck("AR1304")
+THEN
+        RESPONSE #100
+                escapearea()
+END
+
+IF
+        Global("GoblinIPraca","GLOBAL",1)
+        areacheck("AR1305")
+THEN
+        RESPONSE #25
+           wait(10)
+           DisplayStringHead(Myself,~£UP!~)
+        RESPONSE #75
+           wait(10)
+END

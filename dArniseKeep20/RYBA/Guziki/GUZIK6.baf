@@ -1,0 +1,40 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,5)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Jesteœ zbyt daleko ¿eby tego u¿yæ.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        !global("KomnataAktywna","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Program szkoleniowy: Strach ma wiele oczu.~)
+                wait(2)
+		DisplayString(Myself,~5~)
+                wait(1)
+		DisplayString(Myself,~4~)
+                wait(1)
+		DisplayString(Myself,~3~)
+                wait(1)
+		DisplayString(Myself,~2~)
+                wait(1)
+		DisplayString(Myself,~1~)
+                wait(1)
+                setglobal("KomnataAktywna","GLOBAL",2)
+                SetGlobal("ObserverWalczy","GLOBAL",0)
+                setglobal("ObserverKoniec","GLOBAL",0)
+		CreateCreatureDoor("OBSERVER",[2480.515],0)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        global("KomnataAktywna","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Wciskasz p³ytê, ale nic siê nie dzieje.~)
+END

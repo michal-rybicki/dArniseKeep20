@@ -1,0 +1,14 @@
+IF
+     global("ArkandTrening","GLOBAL",3)
+THEN
+     RESPONSE #100
+         EscapeArea()
+END 
+
+IF
+     global("DarniseRezerwy","GLOBAL",0)
+THEN
+     RESPONSE #100
+         setglobal("ArkandTrening","GLOBAL",5)
+         EscapeArea()
+END 

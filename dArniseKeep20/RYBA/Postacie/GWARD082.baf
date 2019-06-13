@@ -1,0 +1,85 @@
+
+IF
+        global("DinaraKatapultS","GLOBAL",0)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+        global("KatapultySON","GLOBAL",1)
+        !Global("GoblinIPraca","GLOBAL",2)
+THEN
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[3200.3200])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[3400.3150])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[3650.3100])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[3900.3050])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[4100.3000])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[4100.2750])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[4150.2500])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[4200.2250])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[4200.2000])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[4300.2000])
+        RESPONSE #10
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[3300.3500])
+END
+
+IF
+        global("KatapultySON","GLOBAL",1)
+        Global("GoblinIPraca","GLOBAL",2)
+THEN
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[3200.3200])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[3400.3150])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[3650.3100])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[3900.3050])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[4100.3000])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[4100.2750])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[4150.2500])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[4200.2250])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[4200.2000])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[4300.2000])
+        RESPONSE #10
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[3300.3500])
+END

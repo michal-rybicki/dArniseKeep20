@@ -1,0 +1,234 @@
+IF
+	GlobalTimerExpired("DarniseTajemne1","GLOBAL")
+        global("DinaraTajemne","GLOBAL",1)
+THEN
+        RESPONSE #100
+        Closedoor("Secret01")
+        SetGlobalTimer("DarniseTajemne1","GLOBAL",ONE_DAY)
+END
+
+IF
+	Global("DarniseOgrod","GLOBAL",0)
+THEN
+	RESPONSE #100		
+                CreateCreature("GWARD01",[1666.1870],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD01",[1793.1762],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD01",[3328.1598],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD01",[3255.1133],14) // Gwardzista rodu d'Arnise
+		CreateCreature("ARKAND",[1985.855],0) // Arkand
+                SetGlobal("DarniseOgrod","GLOBAL",1)
+                explore()
+END
+
+IF
+        Global("ArkandTrening","GLOBAL",4)
+THEN
+	RESPONSE #100	
+		CreateCreature("ARKAND",[1985.855],0) // Arkand
+                SetGlobal("ArkandTrening","GLOBAL",5)                
+END
+
+IF
+        Global("ArkandTrening","GLOBAL",5)
+        global("MarkerZmian","GLOBAL",1)
+        !global("DarniseRezerwy","GLOBAL",0)
+THEN
+	RESPONSE #100	
+		CreateCreature("GWARD05",[1930.1110],5)
+		CreateCreature("GWARD05",[1971.1072],5)
+		CreateCreature("GWARD05",[2012.1034],5)
+		CreateCreature("GWARD05",[2053.996],5)
+		CreateCreature("NIMONK",[1600.934],14)
+		CreateCreature("NIMONK",[1656.893],14)
+		CreateCreature("NIMONK",[1692.852],14)
+		CreateCreature("NIMONK",[1738.811],14)
+                SetGlobal("ArkandTrening","GLOBAL",0)                
+END
+
+//IF
+//        Global("DinaraPlac","GLOBAL",1)
+//        Global("MarkerStworzeniaP","GLOBAL",1)
+//        Global("DinaraPlacTu","GLOBAL",0)
+//THEN
+//	RESPONSE #100
+//                SetGlobal("DinaraPlacTu","GLOBAL",1)
+//END
+
+//IF
+//        Delay(8)
+//        Global("MarkerStworzeniaP","GLOBAL",1)
+//THEN
+//        RESPONSE #100
+//                SetGlobal("MarkerStworzeniaP","GLOBAL",0)
+//END
+
+IF
+//        Delay(16)
+        Global("DinaraPlac","GLOBAL",1)
+//        Global("MarkerStworzeniaP","GLOBAL",0)
+        Global("DinaraPlacTu","GLOBAL",0)
+THEN
+	RESPONSE #100
+                SetGlobal("DinaraPlacTu","GLOBAL",1)
+                CreateCreature("GWARD07",[2525.1833],14) // Gwardzista rodu d'Arnise
+                CreateCreature("GWARD07",[2570.1833],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD07",[2380.1950],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD07",[2380.1995],14) // Gwardzista rodu d'Arnise
+END
+
+IF
+        Global("DinaraKatapultS","GLOBAL",1)
+        global("DinaraKatapultSTu","GLOBAL",0)
+THEN
+	RESPONSE #100
+                setglobal("DinaraKatapultSTu","GLOBAL",1)
+                CreateCreature("GWARD081",[975.1713],14)
+                CreateCreature("GWARD083",[1100.1743],0)
+                CreateCreature("GWARD082",[1228.1475],14)
+                CreateCreature("GWARD083",[1416.1479],0)
+
+END
+
+//IF
+//        Delay(16)
+//        Global("DinaraPlac","GLOBAL",1)
+//        Global("MarkerStworzeniaP","GLOBAL",0)
+//        Global("DinaraPlacTu","GLOBAL",1)
+//THEN
+//	RESPONSE #100
+//                SetGlobal("DinaraPlac","GLOBAL",0)
+//                SetGlobal("DinaraPlacTu","GLOBAL",0)
+//                DisplayStringHead(Player1,~Oddzia³ broni¹cy dziedziñca zosta³ zabity.~)
+//                incrementglobal("DarniseTotal","GLOBAL",-1)
+//END
+
+IF
+        Global("DinaraMost","GLOBAL",1)
+        Global("MarkerStworzeniaM","GLOBAL",1)
+        Global("DinaraMostTu","GLOBAL",0)
+THEN
+	RESPONSE #100
+                SetGlobal("DinaraMostTu","GLOBAL",1)
+END
+
+IF
+        Delay(8)
+        Global("MarkerStworzeniaM","GLOBAL",1)
+THEN
+        RESPONSE #100
+                SetGlobal("MarkerStworzeniaM","GLOBAL",0)
+END
+
+IF
+        Delay(16)
+        Global("DinaraMost","GLOBAL",1)
+        Global("MarkerStworzeniaM","GLOBAL",0)
+        Global("DinaraMostTu","GLOBAL",0)
+THEN
+	RESPONSE #100
+                SetGlobal("DinaraMostTu","GLOBAL",1)
+                CreateCreature("GWARD06",[3595.2874],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD06",[3753.2726],14) // Gwardzista rodu d'Arnise
+                CreateCreature("GWARD06",[3629.2670],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD06",[3535.2730],14) // Gwardzista rodu d'Arnise
+END
+
+IF
+        Delay(16)
+        Global("DinaraMost","GLOBAL",1)
+        Global("MarkerStworzeniaM","GLOBAL",0)
+        Global("DinaraMostTu","GLOBAL",1)
+THEN
+	RESPONSE #100
+                SetGlobal("DinaraMost","GLOBAL",0)
+                SetGlobal("DinaraMostTu","GLOBAL",0)
+                DisplayStringHead(Player1,~Oddzia³ broni¹cy podejœcia do zamku zosta³ zabity.~)
+                incrementglobal("DarniseTotal","GLOBAL",-1)
+END
+
+IF
+        Global("DinaraArmia","GLOBAL",0)
+        Global("DinaraArmiaTu","GLOBAL",1)
+THEN
+	RESPONSE #100
+                SetGlobal("DinaraArmiaTu","GLOBAL",0)
+                SetGlobal("MarkerIstnienia","GLOBAL",0)
+END
+
+IF
+        Global("DinaraArmiaTu","GLOBAL",0)
+        Global("MarkerIstnienia","GLOBAL",1)
+
+THEN
+	RESPONSE #100
+                SetGlobal("MarkerIstnienia","GLOBAL",0)
+END
+
+IF
+        Global("DinaraArmiaTu","GLOBAL",1)
+        Global("MarkerIstnienia","GLOBAL",0)
+
+THEN
+	RESPONSE #100
+                SetGlobal("MarkerIstnienia","GLOBAL",1)
+END
+
+IF
+        Global("DinaraArmia","GLOBAL",1)
+        Global("MarkerStworzenia","GLOBAL",1)
+        Global("MarkerIstnienia","GLOBAL",0)
+
+THEN
+	RESPONSE #100
+                SetGlobal("DinaraArmiaTu","GLOBAL",1)
+                SetGlobal("MarkerIstnienia","GLOBAL",1)
+END
+
+IF
+        Delay(6)
+        Global("MarkerStworzenia","GLOBAL",1)
+THEN
+        RESPONSE #100
+                SetGlobal("MarkerStworzenia","GLOBAL",0)
+
+END
+
+IF
+        Delay(12)
+        Global("DinaraArmia","GLOBAL",1)
+        Global("MarkerStworzenia","GLOBAL",0)
+        Global("MarkerIstnienia","GLOBAL",0)	
+THEN
+	RESPONSE #100
+                SetGlobal("MarkerIstnienia","GLOBAL",1)
+                SetGlobal("DinaraArmiaTu","GLOBAL",1)
+                CreateCreature("GWARD02",[670.3250],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD02",[770.3250],14) // Gwardzista rodu d'Arnise
+                CreateCreature("GWARD02",[670.3350],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD02",[770.3350],14) // Gwardzista rodu d'Arnise
+END
+
+
+IF
+        Delay(12)
+        Global("DinaraArmia","GLOBAL",1)
+        Global("MarkerStworzenia","GLOBAL",0)
+        Global("MarkerIstnienia","GLOBAL",1)
+THEN
+	RESPONSE #100
+                SetGlobal("DinaraArmia","GLOBAL",0)
+                SetGlobal("DinaraArmiaTu","GLOBAL",0)
+                SetGlobal("MarkerIstnienia","GLOBAL",0)
+                DisplayStringHead(Player1,~Oddzia³ operuj¹cy z palisady zosta³ zabity.~)
+                incrementglobal("DarniseTotal","GLOBAL",-1)
+END
+
+IF
+        Global("MarkerUnicestwienia","GLOBAL",1)
+THEN
+        RESPONSE #100
+                SetGlobal("DinaraArmia","GLOBAL",0)
+                SetGlobal("DinaraArmiaTu","GLOBAL",0)
+                SetGlobal("MarkerIstnienia","GLOBAL",0)
+                SetGlobal("MarkerUnicestwienia","GLOBAL",0)        
+END

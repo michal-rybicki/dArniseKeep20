@@ -1,0 +1,41 @@
+IF
+	Global("cmgavatar1","MYAREA",0)
+THEN
+	RESPONSE #100
+		CreateCreature("Garlan",[1460.1600],0) // Garlan
+		CreateCreature("CALIA",[1080.1300],2) // Calia
+		SetGlobal("cmgavatar1","MYAREA",1)
+END
+
+IF
+	Global("Nimon1Exist","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CreateCreature("NIMON",[1950.1200],12) // Nimon powraca
+		SetGlobal("Nimon1Exist","GLOBAL",0)
+END
+
+IF
+	GlobalTimerExpired("DarniseTajemne3","GLOBAL")
+        global("DinaraTajemne","GLOBAL",1)
+THEN
+        RESPONSE #100
+        Closedoor("Secret01")
+        Closedoor("Secret02")
+        Closedoor("Secret03")
+        Closedoor("Secret04")
+        Closedoor("Secret05")
+        SetGlobalTimer("DarniseTajemne3","GLOBAL",ONE_DAY)
+END
+
+IF
+	Global("MagazynierAr1307","GLOBAL",0)
+        global("GoblinSojusz","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CreateCreature("GOBLINM",[1414.950],0)
+		CreateCreature("GOBLINM",[1850.640],0)
+		CreateCreature("GOBLINS",[660.980],0)
+		CreateCreature("GOBLINS",[580.1000],14)
+	 	SetGlobal("MagazynierAr1307","GLOBAL",1)
+END

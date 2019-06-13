@@ -1,0 +1,15 @@
+IF
+        global("MarkerStworzenia","GLOBAL",0)
+THEN
+        RESPONSE #100
+        setglobal("MarkerStworzenia","GLOBAL",1)
+END
+
+IF
+        delay(4)
+        global("MarkerIstnienia","GLOBAL",0)
+THEN
+	RESPONSE #100
+                setglobal("MarkerStworzenia","GLOBAL",0)
+		EscapeArea()
+END

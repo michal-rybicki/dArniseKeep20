@@ -1,0 +1,37 @@
+
+IF
+        global("DinaraKatapultN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+        global("KatapultyNON","GLOBAL",1)
+        !Global("GoblinIPraca","GLOBAL",2)
+THEN
+        RESPONSE #20
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[3200.400])
+        RESPONSE #20
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[3000.300])
+        RESPONSE #20
+               wait(12)
+               ReallyForceSpellPointRES("KATAPULT",[2600.50])
+END
+
+IF
+        global("KatapultyNON","GLOBAL",1)
+        Global("GoblinIPraca","GLOBAL",2)
+THEN
+        RESPONSE #20
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[3200.400])
+        RESPONSE #20
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[3000.300])
+        RESPONSE #20
+               wait(6)
+               ReallyForceSpellPointRES("KATAPULT",[2600.50])
+END

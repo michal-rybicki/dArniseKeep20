@@ -1,0 +1,107 @@
+IF
+	Global("nimonexist","MYAREA",0)
+THEN
+	RESPONSE #100
+		CreateCreature("NIMON",[1100.980],13) // Nimon
+		CreateCreature("GWARD01",[1130.1140],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD01",[1384.1360],14) // Gwardzista rodu d'Arnise
+	 	SetGlobal("nimonexist","MYAREA",1)
+                SetGlobalTimer("DarniseCele","GLOBAL",ONE_DAY)
+END
+
+IF
+	GlobalTimerExpired("DarniseCele","GLOBAL")
+THEN
+        RESPONSE #100
+        Closedoor("Door06")
+        Closedoor("Door07")
+        Closedoor("Door08")
+        Lock("Door06")
+        Lock("Door07")
+        Lock("Door08")
+        SetGlobalTimer("DarniseCele","GLOBAL",ONE_DAY)
+END
+
+IF
+        global("KomnataOverride","GLOBAL",1)
+THEN
+        RESPONSE #100
+        setglobal("KomnataOverride","GLOBAL",0)
+        setglobal("KomnataAktywna","GLOBAL",0)
+        unlock("Door03")
+        opendoor("Door03")
+END
+
+IF
+	Global("MagazynierAr1305","GLOBAL",0)
+        global("GoblinSojusz","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CreateCreature("GOBLINM",[1860.1030],0)
+	 	SetGlobal("MagazynierAr1306","GLOBAL",1)
+
+END
+
+IF
+        global("GoblinSojusz","GLOBAL",1)
+        global("GoblinAr1305","GLOBAL",1)
+THEN
+        RESPONSE #100
+                setglobal("GoblinAr1305","GLOBAL",0)
+                SetGlobal("GoblinTUcieka","GLOBAL",0)
+		CreateCreature("GOBLINT",[960.290],0)
+		CreateCreature("GOBLINT",[1060.300],0)
+		CreateCreature("GOBLINT",[1165.281],0)
+		CreateCreature("GOBLINT",[1030.490],8)
+END
+
+IF
+        global("GoblinSojusz","GLOBAL",1)
+        global("GoblinIAr1305","GLOBAL",1)
+THEN
+        RESPONSE #100
+                setglobal("GoblinIAr1305","GLOBAL",0)
+                SetGlobal("GoblinIUcieka","GLOBAL",0)
+		CreateCreature("GOBLINI",[131.970],0)
+		CreateCreature("GOBLINI",[222.1020],0)
+		CreateCreature("GOBLINI",[176.950],8)
+		CreateCreature("GOBLINI",[346.990],8)
+END
+
+IF
+        global("KomnataOddzial","GLOBAL",0)
+        !Exists("GWARD031")
+        !Exists("GWARD032")
+        !Exists("GWARD033")
+        !Exists("GWARD034")
+        !global("KomnataAktywna","GLOBAL",0)
+THEN
+        RESPONSE #100
+        setglobal("KomnataOddzial","GLOBAL",1)
+        incrementglobal("DarniseTotal","GLOBAL",-1)
+        DisplayStringHead(Player1,~Oddzia³ stracony podczas treningu.~)
+END
+
+IF
+       Global("RoenallJeniec","GLOBAL",1)
+THEN
+       RESPONSE #100
+             SetGlobal("RoenallJeniec","GLOBAL",0)
+             CreateCreature("JENIEC",[1387.1599],14) // Jeniec
+END
+
+IF
+        Delay(6)
+        Global("JeniecExist","GLOBAL",1)
+THEN
+        RESPONSE #100
+                SetGlobal("JeniecExist","GLOBAL",0)  
+END
+
+IF
+        !global("KomnataAktywna","GLOBAL",0)
+THEN
+        RESPONSE #100
+        closedoor("Door03")
+        lock("Door03")
+END

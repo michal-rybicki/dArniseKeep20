@@ -1,0 +1,46 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,5)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Jesteœ zbyt daleko ¿eby tego u¿yæ.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        !global("KomnataAktywna","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Program szkoleniowy: Upadek niebios.~)
+                wait(2)
+		DisplayString(Myself,~7~)
+                wait(1)
+		DisplayString(Myself,~6~)
+                wait(1)
+		DisplayString(Myself,~5~)
+                wait(1)
+		DisplayString(Myself,~4~)
+                wait(1)
+		DisplayString(Myself,~3~)
+                wait(1)
+		DisplayString(Myself,~2~)
+                wait(1)
+		DisplayString(Myself,~1~)
+                wait(1)
+		DisplayString(Myself,~W kamieniu pojawia siê napis: Mi³o by³o ciê poznaæ.~)
+                wait(1)
+                setglobal("KomnataAktywna","GLOBAL",2)
+		CreateCreatureDoor("PLANETAR",[2480.515],0)
+                CreateCreatureDoor("PLANETAR",[2388.458],0)
+
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        global("KomnataAktywna","GLOBAL",2)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Wciskasz p³ytê, ale nic siê nie dzieje.~)
+END

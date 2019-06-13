@@ -1,0 +1,559 @@
+IF
+	Global("PCKeepOwner","GLOBAL",1)
+	Global("DarniseStart","GLOBAL",0)
+THEN
+	RESPONSE #100
+	  SetGlobal("DarniseStart","GLOBAL",1)
+	  SetGlobal("DarniseRezerwy","GLOBAL",3)
+	  SetGlobal("DarniseTotal","GLOBAL",3)
+          setglobal("KomnataOddzial","GLOBAL",1)
+          setglobal("ArkandTrening","GLOBAL",5)
+          SetGlobal("MarkerZmian","GLOBAL",1)
+          setglobaltimer("CernikTimer","GLOBAL",SEVEN_DAYS)
+END
+
+
+IF
+       !global("GarlanWiad","GLOBAL",0)
+       global("GarlanInfo","GLOBAL",0)
+THEN
+       RESPONSE #100
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       Global("PCKeepOwner","GLOBAL",0)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                setglobal("GarlanInfo","GLOBAL",0)
+END
+
+IF
+       dead("GARLAN")
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                setglobal("GarlanInfo","GLOBAL",0)
+END
+
+IF
+          GlobalTimerExpired("GoblinIKopie","GLOBAL")
+          Global("GoblinIPraca","GLOBAL",1)
+THEN
+          RESPONSE #50
+		IncrementGlobal("GoblinIDiamenty","GLOBAL",1)
+                SetGlobalTimer("GoblinIKopie","GLOBAL",ONE_DAY)
+          RESPONSE #50
+		IncrementGlobal("GoblinIDiamenty","GLOBAL",1)
+                SetGlobalTimer("GoblinIKopie","GLOBAL",TWO_DAYS)
+//          RESPONSE #6
+//                SetGlobalTimer("GoblinIKopie","GLOBAL",ONE_DAY)
+//		IncrementGlobal("GoblinIDiamentyB","GLOBAL",1)
+END
+
+IF
+          GlobalTimerExpired("CernikTimer","GLOBAL")
+          Global("CernikLicznik","GLOBAL",0)
+          Global("CernikWiad","GLOBAL",0)
+          global("GoblinDrogi","GLOBAL",0)
+THEN
+          RESPONSE #25
+                setglobaltimer("CernikTimer","GLOBAL",TWO_DAYS)
+                SetGlobal("CernikLicznik","GLOBAL",1)
+          RESPONSE #25
+                setglobaltimer("CernikTimer","GLOBAL",FIVE_DAYS)
+                SetGlobal("CernikLicznik","GLOBAL",1)
+          RESPONSE #25
+                setglobaltimer("CernikTimer","GLOBAL",SEVEN_DAYS)
+                SetGlobal("CernikLicznik","GLOBAL",1)
+          RESPONSE #25
+                setglobaltimer("CernikTimer","GLOBAL",ONE_DAY)
+                SetGlobal("CernikLicznik","GLOBAL",0)
+END
+
+IF
+          GlobalTimerExpired("CernikTimer","GLOBAL")
+          Global("CernikLicznik","GLOBAL",0)
+          Global("CernikWiad","GLOBAL",0)
+          globalGT("GoblinDrogi","GLOBAL",0)
+THEN
+          RESPONSE #55
+                setglobaltimer("CernikTimer","GLOBAL",ONE_DAY)
+                SetGlobal("CernikLicznik","GLOBAL",1)
+          RESPONSE #15
+                setglobaltimer("CernikTimer","GLOBAL",FIVE_DAYS)
+                SetGlobal("CernikLicznik","GLOBAL",1)
+          RESPONSE #15
+                setglobaltimer("CernikTimer","GLOBAL",SEVEN_DAYS)
+                SetGlobal("CernikLicznik","GLOBAL",1)
+          RESPONSE #15
+                setglobaltimer("CernikTimer","GLOBAL",ONE_DAY)
+                SetGlobal("CernikLicznik","GLOBAL",0)
+END
+
+IF
+          GlobalTimerExpired("CernikTimer","GLOBAL")
+          Global("CernikLicznik","GLOBAL",1)
+          Global("CernikWiad","GLOBAL",0)
+          global("GoblinDrogi","GLOBAL",0)          
+THEN
+          RESPONSE #30
+          setGlobal("CernikWiad","GLOBAL",1)
+          RESPONSE #30
+          setGlobal("CernikWiad","GLOBAL",2)
+          RESPONSE #30
+          setGlobal("CernikWiad","GLOBAL",3)
+//          RESPONSE #10
+//          setGlobal("CernikWiad","GLOBAL",0)
+END
+
+IF
+          GlobalTimerExpired("CernikTimer","GLOBAL")
+          Global("CernikLicznik","GLOBAL",1)
+          Global("CernikWiad","GLOBAL",0)   
+          globalGT("GoblinDrogi","GLOBAL",0)       
+THEN
+          RESPONSE #30
+          setGlobal("CernikWiad","GLOBAL",1)
+          RESPONSE #60
+          setGlobal("CernikWiad","GLOBAL",2)
+          RESPONSE #30
+          setGlobal("CernikWiad","GLOBAL",3)
+//          RESPONSE #10
+//          setGlobal("CernikWiad","GLOBAL",0)
+END
+
+IF
+       GlobalLT("DarniseRezerwy","GLOBAL",1)
+       Global("MarkerZmian","GLOBAL",1)
+THEN
+       RESPONSE #100
+                SetGlobal("MarkerZmian","GLOBAL",0)
+                SetGlobal("TimerZmianON","GLOBAL",0)            
+END
+
+IF
+       GlobalGT("DarniseRezerwy","GLOBAL",0)
+       Global("MarkerZmian","GLOBAL",0)
+       Global("TimerZmianON","GLOBAL",0)
+THEN
+       RESPONSE #100
+                SetGlobalTimer("TimerZmian","GLOBAL",ONE_DAY)
+                SetGlobal("TimerZmianON","GLOBAL",1)    
+END
+
+IF
+       GlobalGT("DarniseRezerwy","GLOBAL",0)
+       Global("MarkerZmian","GLOBAL",0)
+       GlobalTimerExpired("TimerZmian","GLOBAL")       
+THEN
+       RESPONSE #100
+                SetGlobal("MarkerZmian","GLOBAL",1)        
+END
+
+IF
+       GlobalTimerExpired("ArkandInwazja","GLOBAL")  
+       Global("RoenallInwazja","GLOBAL",3)    
+       Global("PCKeepOwner","GLOBAL",1)
+THEN
+
+       RESPONSE #15
+                SetGlobal("RoenallInwazja","GLOBAL",0)
+                SetGlobal("RoenallWynik","GLOBAL",1)
+                incrementglobal("DarniseRezerwy","GLOBAL",4)
+		IncrementGlobal("KPTaxes","GLOBAL",25000)
+                setglobal("GarlanWiad","GLOBAL",1)
+//                DisplayStringHead(Player1,~Armia inwazyjna wróci³a do zamku.~)
+       RESPONSE #15
+                SetGlobal("RoenallInwazja","GLOBAL",0)
+                SetGlobal("RoenallWynik","GLOBAL",2)
+                incrementglobal("DarniseRezerwy","GLOBAL",6)
+                setglobal("GarlanWiad","GLOBAL",1)
+//                DisplayStringHead(Player1,~Armia inwazyjna wróci³a do zamku.~)
+       RESPONSE #15
+                SetGlobal("RoenallInwazja","GLOBAL",0)
+                SetGlobal("RoenallWynik","GLOBAL",3)
+                incrementglobal("DarniseRezerwy","GLOBAL",4)
+                DisplayStringHead(Player1,~Armia inwazyjna wróci³a do zamku.~)
+                setglobal("GarlanWiad","GLOBAL",1)
+//                SetGlobal("RoenallJeniec","GLOBAL",1)
+       RESPONSE #40
+                SetGlobal("RoenallInwazja","GLOBAL",0)
+                SetGlobal("RoenallWynik","GLOBAL",4)
+                incrementglobal("DarniseRezerwy","GLOBAL",4)
+                setglobal("GarlanWiad","GLOBAL",2)
+//                DisplayStringHead(Player1,~Armia inwazyjna wróci³a do zamku.~)
+       RESPONSE #10
+                SetGlobal("RoenallInwazja","GLOBAL",0)
+                SetGlobal("RoenallWynik","GLOBAL",31)
+                incrementglobal("DarniseRezerwy","GLOBAL",3)
+                incrementglobal("DarniseTotal","GLOBAL",-1)
+		IncrementGlobal("KPRevolt","GLOBAL",1)
+                setglobal("GarlanWiad","GLOBAL",3)
+//                DisplayStringHead(Player1,~Armia inwazyjna wróci³a do zamku.~)
+       RESPONSE #3
+                SetGlobal("RoenallInwazja","GLOBAL",0)
+                SetGlobal("RoenallWynik","GLOBAL",32)
+                incrementglobal("DarniseRezerwy","GLOBAL",2)
+                incrementglobal("DarniseTotal","GLOBAL",-2)
+		IncrementGlobal("KPRevolt","GLOBAL",2)
+                setglobal("GarlanWiad","GLOBAL",3)
+//                DisplayStringHead(Player1,~Armia inwazyjna wróci³a do zamku.~)
+       RESPONSE #2
+                SetGlobal("RoenallInwazja","GLOBAL",0)
+                SetGlobal("RoenallWynik","GLOBAL",33)
+                incrementglobal("DarniseRezerwy","GLOBAL",1)
+                incrementglobal("DarniseTotal","GLOBAL",-3)
+		IncrementGlobal("KPRevolt","GLOBAL",3)
+                setglobal("GarlanWiad","GLOBAL",3)
+//                DisplayStringHead(Player1,~Armia inwazyjna wróci³a do zamku.~)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",1)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Armia inwazyjna wróci³a do zamku. Osi¹gnêli pewien sukces.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",2)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Armia inwazyjna wróci³a do zamku. Nic nie osi¹gnêli.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",3)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Armia inwazyjna wróci³a do zamku. Poniesli klêskê. S¹ straty.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       GlobalTimerExpired("ArkandInwazja","GLOBAL")  
+       Global("RoenallInwazja","GLOBAL",1)    
+THEN
+       RESPONSE #100
+                SetGlobal("RoenallInwazja","GLOBAL",2)
+                setglobaltimer("ArkandInwazja","GLOBAL",SEVEN_DAYS)
+END
+
+IF
+       GlobalTimerExpired("ArkandInwazja","GLOBAL")  
+       Global("RoenallInwazja","GLOBAL",2)
+THEN
+       RESPONSE #100
+                SetGlobal("RoenallInwazja","GLOBAL",3)
+                setglobaltimer("ArkandInwazja","GLOBAL",SEVEN_DAYS)
+END
+
+IF
+	GlobalTimerExpired("NimonHandel","GLOBAL")
+	Global("NimonPosi","GLOBAL",2)
+        Global("RatavaPosi","GLOBAL",0)
+	Global("PCKeepOwner","GLOBAL",1)
+        Global("GoblinKuznia","GLOBAL",0)
+THEN
+	RESPONSE #30
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",200)
+                setglobal("GarlanWiad","GLOBAL",4)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 200 sztuk z³ota.~)
+	RESPONSE #30
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",300)
+                setglobal("GarlanWiad","GLOBAL",5)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 300 sztuk z³ota.~)
+	RESPONSE #30
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",400)
+                setglobal("GarlanWiad","GLOBAL",6)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 400 sztuk z³ota.~)
+	RESPONSE #7
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",3000)
+                setglobal("GarlanWiad","GLOBAL",7)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 3000 sztuk z³ota.~)
+	RESPONSE #2
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",25000)
+                setglobal("GarlanWiad","GLOBAL",8)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 25000 sztuk z³ota.~)
+END
+
+IF
+	GlobalTimerExpired("NimonHandel","GLOBAL")
+	Global("NimonPosi","GLOBAL",2)
+        Global("RatavaPosi","GLOBAL",0)
+	Global("PCKeepOwner","GLOBAL",1)
+        Global("GoblinKuznia","GLOBAL",1)
+THEN
+	RESPONSE #30
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",300)
+                setglobal("GarlanWiad","GLOBAL",15)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 300 sztuk z³ota.~)
+	RESPONSE #30
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",400)
+                setglobal("GarlanWiad","GLOBAL",16)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 400 sztuk z³ota.~)
+	RESPONSE #30
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",500)
+                setglobal("GarlanWiad","GLOBAL",17)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 500 sztuk z³ota.~)
+	RESPONSE #7
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",3300)
+                setglobal("GarlanWiad","GLOBAL",18)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 3300 sztuk z³ota.~)
+	RESPONSE #2
+		SetGlobalTimer("NimonHandel","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",28000)
+                setglobal("GarlanWiad","GLOBAL",19)
+//                DisplayStringHead(Player1,~Stanowsiko handlowe zarabia 28000 sztuk z³ota.~)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",4)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 200 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",5)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 300 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",6)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 400 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",7)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 3000 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",8)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 25000 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+	Global("PCKeepOwner","GLOBAL",1)
+	GlobalTimerExpired("ArkandPatrol","GLOBAL")
+        Global("ArkandArmia","GLOBAL",1)
+        global("GoblinDrogi","GLOBAL",0)
+THEN
+        RESPONSE #25
+		SetGlobalTimer("ArkandPatrol","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPRevolt","GLOBAL",-1)
+                setglobal("GarlanWiad","GLOBAL",9)
+        RESPONSE #51
+		SetGlobalTimer("ArkandPatrol","GLOBAL",SEVEN_DAYS)
+                setglobal("GarlanWiad","GLOBAL",10)
+        RESPONSE #7
+		SetGlobalTimer("ArkandPatrol","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",3000)
+                setglobal("GarlanWiad","GLOBAL",11)
+                SetGlobal("ArkandSukces","GLOBAL",1)
+        RESPONSE #10
+		SetGlobalTimer("ArkandPatrol","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPRevolt","GLOBAL",1)
+                setglobal("GarlanWiad","GLOBAL",12)
+                SetGlobal("ArkandWpadka","GLOBAL",1)
+        RESPONSE #7
+                setglobal("ArkandArmia","GLOBAL",0)
+                setglobal("GarlanWiad","GLOBAL",13)
+                SetGlobal("ArkandZabity","GLOBAL",1)
+                incrementglobal("DarniseTotal","GLOBAL",-1)
+END
+
+IF
+	Global("PCKeepOwner","GLOBAL",1)
+	GlobalTimerExpired("ArkandPatrol","GLOBAL")
+        Global("ArkandArmia","GLOBAL",1)
+        globalGT("GoblinDrogi","GLOBAL",0)
+THEN
+        RESPONSE #30
+		SetGlobalTimer("ArkandPatrol","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPRevolt","GLOBAL",-1)
+                setglobal("GarlanWiad","GLOBAL",9)
+        RESPONSE #43
+		SetGlobalTimer("ArkandPatrol","GLOBAL",SEVEN_DAYS)
+                setglobal("GarlanWiad","GLOBAL",10)
+        RESPONSE #10
+		SetGlobalTimer("ArkandPatrol","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPTaxes","GLOBAL",3000)
+                setglobal("GarlanWiad","GLOBAL",11)
+                SetGlobal("ArkandSukces","GLOBAL",1)
+        RESPONSE #10
+		SetGlobalTimer("ArkandPatrol","GLOBAL",SEVEN_DAYS)
+		IncrementGlobal("KPRevolt","GLOBAL",1)
+                setglobal("GarlanWiad","GLOBAL",12)
+                SetGlobal("ArkandWpadka","GLOBAL",1)
+        RESPONSE #7
+                setglobal("ArkandArmia","GLOBAL",0)
+                setglobal("GarlanWiad","GLOBAL",13)
+                SetGlobal("ArkandZabity","GLOBAL",1)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",9)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zwiêksza przychynoœæ mieszkañców.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",10)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise nie zmienia nastawienia mieszkañców.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",11)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zajmuje kryjówkê przemytników. Do twojego skarbca wp³ywa dodatkowy 3000 sztuk z³ota~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",12)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zmniejsza przychynoœæ mieszkañców.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",13)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zosta³ zabity.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",14)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #10
+                DisplayStringHead(Player1,~Garlan: Olmo, na kolacjê przyrz¹dŸ mi te takie ma³e kluseczki... Oj! Nie ten umys³. Pomy³ka.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+       RESPONSE #10
+                DisplayStringHead(Player2,~Garlan: Elminster! S³ysza³eœ najnowsze plotki o... Oj! Nie ten umys³. Pomy³ka.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+       RESPONSE #10
+                DisplayStringHead(Player3,~Garlan: Muszê ci przekazaæ informacje o strasznej tragedii... Zaraz... Ju¿ nieaktualne.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+       RESPONSE #10
+                DisplayStringHead(Player1,~Garlan: I ¿eby rzuciæ to zaklêcie to by sie przyda³ jeszcze jeden mag... Oj! Znowu myœlê na g³os!~)
+                DisplayStringHead(Player2,~Garlan: I ¿eby rzuciæ to zaklêcie to by sie przyda³ jeszcze jeden mag... Oj! Znowu myœlê na g³os!~)
+                DisplayStringHead(Player3,~Garlan: I ¿eby rzuciæ to zaklêcie to by sie przyda³ jeszcze jeden mag... Oj! Znowu myœlê na g³os!~)
+                DisplayStringHead(Player4,~Garlan: I ¿eby rzuciæ to zaklêcie to by sie przyda³ jeszcze jeden mag... Oj! Znowu myœlê na g³os!~)
+                DisplayStringHead(Player5,~Garlan: I ¿eby rzuciæ to zaklêcie to by sie przyda³ jeszcze jeden mag... Oj! Znowu myœlê na g³os!~)
+                DisplayStringHead(Player6,~Garlan: I ¿eby rzuciæ to zaklêcie to by sie przyda³ jeszcze jeden mag... Oj! Znowu myœlê na g³os!~)
+                setglobal("GarlanWiad","GLOBAL",0)
+       RESPONSE #10
+//                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zosta³ zabity.~)
+//                setglobal("GarlanWiad","GLOBAL",0)
+       RESPONSE #10
+//               DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zosta³ zabity.~)
+//                setglobal("GarlanWiad","GLOBAL",0)
+       RESPONSE #10
+//                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zosta³ zabity.~)
+//                setglobal("GarlanWiad","GLOBAL",0)
+       RESPONSE #10
+//                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zosta³ zabity.~)
+//                setglobal("GarlanWiad","GLOBAL",0)
+       RESPONSE #10
+//                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zosta³ zabity.~)
+//                setglobal("GarlanWiad","GLOBAL",0)
+       RESPONSE #10
+//                DisplayStringHead(Player1,~Garlan: Oddzia³ patroluj¹cy ziemie rodu d'Arnise zosta³ zabity.~)
+//                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",15)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 300 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",16)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 400 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",17)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 500 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",18)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 3300 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END
+
+IF
+       global("GarlanWiad","GLOBAL",19)
+       global("GarlanInfo","GLOBAL",1)
+THEN
+       RESPONSE #100
+                DisplayStringHead(Player1,~Garlan: Stanowsiko handlowe Nimona zarabia 28000 sztuk z³ota.~)
+                setglobal("GarlanWiad","GLOBAL",0)
+END

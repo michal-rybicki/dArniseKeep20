@@ -1,0 +1,79 @@
+IF
+        Global("ArkandAr1100","GLOBAL",0)
+        Global("ArkandAr1100Tu","GLOBAL",1)
+THEN
+	RESPONSE #100
+                SetGlobal("ArkandAr1100Tu","GLOBAL",0)
+                SetGlobal("MarkerIstnienia","GLOBAL",0)
+END
+
+IF
+        Global("ArkandAr1100Tu","GLOBAL",0)
+        Global("MarkerIstnienia","GLOBAL",1)
+
+THEN
+	RESPONSE #100
+                SetGlobal("MarkerIstnienia","GLOBAL",0)
+END
+
+IF
+        Global("ArkandAr1100Tu","GLOBAL",1)
+        Global("MarkerIstnienia","GLOBAL",0)
+
+THEN
+	RESPONSE #100
+                SetGlobal("MarkerIstnienia","GLOBAL",1)
+END
+
+IF
+        Global("ArkandAr1100","GLOBAL",1)
+        Global("ArkandAr1100Tu","GLOBAL",0)	
+THEN
+	RESPONSE #100
+                SetGlobal("MarkerIstnienia","GLOBAL",1)
+                SetGlobal("ArkandAr1100Tu","GLOBAL",1)
+                CreateCreature("GWARD021",[4850.3000],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD022",[4850.3050],14) // Gwardzista rodu d'Arnise
+                CreateCreature("GWARD023",[4900.3000],14) // Gwardzista rodu d'Arnise
+		CreateCreature("GWARD024",[4900.3050],14) // Gwardzista rodu d'Arnise
+END
+
+
+IF
+        Global("ArkandAr1100","GLOBAL",1)
+        !Exists("GWARD021")
+        !Exists("GWARD022")
+        !Exists("GWARD023")
+        !Exists("GWARD024")
+        Global("ArkandAr1100Tu","GLOBAL",1)
+THEN
+	RESPONSE #100
+                SetGlobal("ArkandAr1100","GLOBAL",0)
+                SetGlobal("ArkandAr1100Tu","GLOBAL",0)
+                SetGlobal("MarkerIstnienia","GLOBAL",0)
+                DisplayStringHead(Player1,~Oddzia³ zosta³ zabity.~)
+                incrementglobal("DarniseTotal","GLOBAL",-1)
+END
+
+IF
+        Global("MarkerUnicestwienia","GLOBAL",1)
+THEN
+        RESPONSE #100
+                SetGlobal("ArkandAr1100","GLOBAL",0)
+                SetGlobal("ArkandAr1100Tu","GLOBAL",0)
+                SetGlobal("MarkerIstnienia","GLOBAL",0)
+                SetGlobal("MarkerUnicestwienia","GLOBAL",0)        
+END
+
+IF
+        global("GoblinSojusz","GLOBAL",1)
+        global("GoblinAr1100","GLOBAL",1)
+THEN
+        RESPONSE #100
+                setglobal("GoblinAr1100","GLOBAL",0)
+                SetGlobal("GoblinTUcieka","GLOBAL",0)
+		CreateCreature("GOBLINT",[3700.3000],8)
+		CreateCreature("GOBLINT",[3700.3050],8)
+		CreateCreature("GOBLINT",[3750.3000],8)
+		CreateCreature("GOBLINT",[3750.3050],8)
+END

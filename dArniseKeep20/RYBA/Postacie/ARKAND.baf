@@ -1,0 +1,56 @@
+IF
+     delay(30)     
+     globalGT("DarniseRezerwy","GLOBAL",0)
+     global("ArkandTrening","GLOBAL",0)
+THEN
+     RESPONSE #20
+           DisplayStringHead(Myself,~Wasza broñ to wasze ¿ycie. Tracicie broñ, tracicie ¿ycie.~)
+     RESPONSE #20
+           DisplayStringHead(Myself,~£uk musi stanowiæ przed³u¿enie was samych. Kiedy pomyœlicie, ¿e chcecie coœ trafiæ, strza³a musi ju¿ lecieæ w tym kierunku.~)
+     RESPONSE #20
+           DisplayStringHead(Myself,~Kiedy widziecie, ¿e troll le¿y na ziemi, ¿eby drania dobiæ potrzebujecie ognia lub kwasu.~)
+     RESPONSE #20
+           DisplayStringHead(Myself,~Golemy s¹ z natury odporne na magiê, dlatego nie liczcie na pomoc maga w walce z nimi.~)
+     RESPONSE #20
+           DisplayStringHead(Myself,~Kiedy atakujecie grupê magów, atakujcie jak najwiêcej z nich naraz. Walka potrwa d³u¿ej, ale wiêcej z nich bêdzie zbyt rosproszonych by rzucaæ zaklêcia.~)
+END
+
+IF   
+     Delay(2)
+     Global("ArkandTrening","GLOBAL",1)
+THEN
+     RESPONSE #50
+           DisplayStringHead(Myself,~Kto zaliczy najwiêcej trafieñ, dostaje dodatkow¹ porcjê na kolacjê!~)
+           Wait(4)
+           DisplayStringHead(Myself,~Na mój znak!~)    
+           Wait(4)
+           DisplayStringHead(Myself,~OGNIA!~)     
+           SetGlobal("ArkandTrening","GLOBAL",2)
+     RESPONSE #50
+           DisplayStringHead(Myself,~WyobraŸcie sobie, ze te oto Yuan-ti chc¹ waszej œmierci. Poka¿cie jak wy chcecie ich œmierci!~)
+           Wait(4)
+           DisplayStringHead(Myself,~Na mój znak!~)    
+           Wait(4)
+           DisplayStringHead(Myself,~OGNIA!~)     
+           SetGlobal("ArkandTrening","GLOBAL",2)
+
+END
+
+IF   
+     Delay(60)
+     Global("ArkandTrening","GLOBAL",2)
+THEN
+     RESPONSE #100
+           DisplayStringHead(Myself,~Dobra robota. Na dziœ to wszystko.~)     
+           SetGlobal("ArkandTrening","GLOBAL",3)
+           SetGlobalTimer("ArkandCwiczenie","GLOBAL",ONE_DAY)
+END
+
+IF
+	   GlobalTimerExpired("ArkandCwiczenie","GLOBAL")
+           Global("ArkandTrening","GLOBAL",3)
+THEN
+     RESPONSE #100
+           SetGlobal("ArkandTrening","GLOBAL",4)
+           DestroySelf()
+END

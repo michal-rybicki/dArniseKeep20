@@ -1,0 +1,7 @@
+IF
+          GlobalTimerExpired("CernikInwazja","GLOBAL")
+	  Global("GWARD01Ogrod","GLOBAL",0)
+THEN
+    RESPONSE #100
+	  DestroySelf()
+END

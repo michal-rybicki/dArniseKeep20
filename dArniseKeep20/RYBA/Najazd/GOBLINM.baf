@@ -1,0 +1,25 @@
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+                setglobal("GoblinUcieka","GLOBAL",1)
+		Enemy()
+		Continue()
+END
+
+IF
+	HitBy([GOODCUTOFF],CRUSHING)
+THEN
+	RESPONSE #100
+                setglobal("GoblinUcieka","GLOBAL",1)
+		Continue()
+END
+
+IF
+        Global("GoblinUcieka","GLOBAL",1)
+
+THEN
+        RESPONSE #100
+                escapearea()
+END

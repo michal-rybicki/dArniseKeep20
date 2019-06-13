@@ -1,0 +1,29 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,5)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Jesteœ zbyt daleko ¿eby tego u¿yæ.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        global("KomnataAktywna","GLOBAL",0)
+THEN
+	RESPONSE #70
+		DisplayString(Myself,~Dotykasz kamiennej p³yty i wiesz, ¿e póŸniej ³atwo bêdzie przywo³aæ ten moment.~)
+                wait(4)
+                SaveGame(0)
+        RESPONSE #30
+                DisplayString(Myself,~Zgrzyt. Zgrzyt. Stuk. Stuk. Coœ siê zacie³o.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        !global("KomnataAktywna","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Wciskasz p³ytê, ale nic siê nie dzieje.~)
+END

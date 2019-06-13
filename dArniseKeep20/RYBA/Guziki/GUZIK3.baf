@@ -1,0 +1,44 @@
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,5)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Jesteœ zbyt daleko ¿eby tego u¿yæ.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        global("KomnataAktywna","GLOBAL",0)
+        globalGT("DarniseRezerwy","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Gwardziœci przybywaj¹ na szkolenie.~)
+                wait(1)
+                setglobal("KomnataAktywna","GLOBAL",1)
+                setglobal("KomnataOddzial","GLOBAL",0)
+                incrementglobal("DarniseRezerwy","GLOBAL",-1)
+                CreateCreatureDoor("GWARD031",[2000.646],7) // Gwardzista rodu d'Arnise
+		CreateCreatureDoor("GWARD032",[2048.682],7) // Gwardzista rodu d'Arnise
+                CreateCreatureDoor("GWARD033",[2096.727],7) // Gwardzista rodu d'Arnise
+		CreateCreatureDoor("GWARD034",[2156.778],7) // Gwardzista rodu d'Arnise
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        !global("KomnataAktywna","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Wciskasz p³ytê, ale nic siê nie dzieje.~)
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,5)
+        global("KomnataAktywna","GLOBAL",0)
+        globalLT("DarniseRezerwy","GLOBAL",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,~Brak dostêpnych oddzia³ów.~)
+END
